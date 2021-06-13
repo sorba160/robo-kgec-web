@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Varela+Round&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 *,
 *::after,
 *::before {
@@ -15,10 +15,11 @@
     --clr-a-border: hsla(0, 0%, 100%, 0.733);
     --clr-btn: rgba(0, 0, 0, 0);
     --clr-btn-hover: rgba(20, 20, 20, 0.397);
-  }
+}
 
-html, body {
-    font-family: 'Varela Round', sans-serif;
+html,
+body {
+    font-family: "Varela Round", sans-serif;
     /* height: 100vh; */
 }
 
@@ -27,26 +28,32 @@ html, body {
     grid-template-columns: 2fr;
     /* background-color: #232323; */
     /* grid-template-rows: repeat(3, 1fr); */
-    gap: 1rem;
-    padding: 4rem 12rem;
+    /* gap: 1rem; */
+    /* padding: 4rem 12rem; */
     margin: auto;
     color: black;
     text-align: center;
 }
 
 .sub-about {
+    max-width: 1200px;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
 }
 
+.sub-about-container {
+    padding: 2rem;
+}
+
 ul {
     list-style: none;
 }
 
-.about-container img {
-    width: 50%;
+.about-container img:not(.lines) {
+    width: 70%;
     height: 100%;
     margin: 0 auto;
     /* background-color: rgb(170, 169, 169); */
@@ -56,10 +63,15 @@ ul {
     box-shadow: 0 2px 20px -5px black;
 }
 
+.about-container .about-video{
+    width:80%;
+    margin: auto;
+    max-width: 1200px;
+}
+
 .about-container iframe {
     /* border: 2px solid grey; */
-    border-radius: 4px;
-    box-shadow: 0 1px 16px -9px rgb(189, 189, 189);
+    border-radius: 12px;
 }
 
 .about-container h1 {
@@ -69,13 +81,26 @@ ul {
 .main-about {
     background-color: #232323;
     padding: 4rem 0;
-    border-radius: 4px;
+    position: relative;
+    overflow-x: hidden;
+    /* border-radius: 4px; */
+}
+
+.main-about .lines {
+    width: 25%;
+    height: auto;
+    position: absolute;
+    z-index: 0;
+    right: -12.5%;
+    top: 5%;
+    opacity: 0.8;
 }
 
 .about-description .about-text {
-    width: 50%;
+    max-width: 700px;
     margin: auto;
     line-height: 1.5;
+    color: rgb(150, 150, 150);
 }
 
 .about-description .about-title {
@@ -103,7 +128,7 @@ ul {
 
 .about-description .fa-quote-left,
 .about-description .fa-quote-right {
-    color:rgb(150, 150, 150);
+    color: rgb(150, 150, 150);
 }
 
 .motto-description {
@@ -123,7 +148,7 @@ ul {
     font-size: 1.825rem;
     word-spacing: 8px;
     letter-spacing: 4px;
-    font-family: 'Lobster', cursive;
+    font-family: "Lobster", cursive;
     color: var(--clr-bg-hover);
 }
 
@@ -151,12 +176,16 @@ ul {
     font-size: 1.045rem;
 }
 
+.techtix-container{
+    background-color: rgb(224, 224, 224);
+    padding:2rem;
+}
+
 .techtix {
     display: flex;
     gap: 2rem;
-    margin: 4rem 0 0;
-    background-color: rgb(224, 224, 224);
-    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: auto;
     align-items: center;
 }
 
@@ -166,7 +195,6 @@ ul {
 }
 
 .techtix iframe {
-    width: 75%;
     margin: auto;
     box-shadow: 0 0 16px -3px black;
 }
@@ -174,6 +202,17 @@ ul {
 .techtix .event-main-title {
     font-size: 1.875rem;
     letter-spacing: 2px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.techtix .event-main-title::after {
+    content:'';
+    width:60%;
+    height: 2px;
+    background: linear-gradient(to right,#0a1920 20%, grey 20%, grey);
+    position: absolute;
+    top:100%;
+    left:0;
 }
 
 .techtix .event-title {
@@ -197,6 +236,6 @@ ul {
 
 .techtix .techtix-description ul {
     margin: 0.75rem 0;
-    color: rgb(145, 49, 14);
+    color: rgb(42, 109, 191);
     font-weight: bold;
 }

@@ -41,7 +41,7 @@ footer {
 footer .col-container {
   height: 400;
   /* background-color:hsl(233, 47%, 7%); */
-  background-image: url(https://image.freepik.com/free-photo/robot-head-dark-surface_407240-293.jpg),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(https://image.freepik.com/free-photo/robot-head-dark-surface_407240-293.jpg),
     linear-gradient(#16222a, #3a6073);
   background-blend-mode: overlay;
   /* opacity: ; */
@@ -58,9 +58,11 @@ footer .col-container {
 }
 
 footer .container {
+  width: 100%;
+  max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-bottom: 2px solid grey;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2rem;
   padding-bottom: 12px;
 }
 
@@ -76,7 +78,7 @@ footer .container ul > li {
 footer .about,
 .contact-us,
 .quick-links {
-  margin: 0 2rem;
+  /* margin: 0 2rem; */
   /* line-height: 1rem; */
   font-family: "Noto Serif", serif;
 }
@@ -93,13 +95,17 @@ footer .about h2,
 footer .about h2::after,
 .contact-us h2::after,
 .quick-links h2::after {
-  content: "";
+  content:'';
+  width:60%;
+  height: 2px;
+  background: linear-gradient(to right,white 20%, grey 20%, grey);
   position: absolute;
-  top: 55px;
-  display: block;
-  min-width: 60%;
-  height: 1.5px;
-  background-color: grey;
+  top:147%;
+  left:0;
+}
+
+footer .about h2::after{
+  width:40%;
 }
 
 footer .item-center-one {
@@ -112,7 +118,7 @@ footer .item-center-one {
 footer .divider {
   height: 1px;
   width: 100%;
-  background-color: hsla(0, 0%, 100%, 0.925);
+  background-color: rgba(255, 255, 255, 0.3);
   margin: 12px 0;
 }
 
@@ -165,11 +171,10 @@ footer .mobile-no,
 footer .copyright {
   font-weight: 100;
   color: hsl(0, 1%, 63%);
-  border-top: 1px solid rgba(255, 255, 255, 0.527);
   width: 100%;
   text-align: center;
   padding: 8px 0;
-  background: rgb(7, 21, 32);
+  background: black;
   font-size: 1.25rem;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -180,6 +185,21 @@ footer .social-links {
   gap: 3rem;
   font-size: 2rem;
   margin-top: 16px;
+}
+
+footer .social-links a{
+  border-radius: 50%;
+  border: 1px solid grey;
+  width:50px;
+  height:50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .social-links a i{
+  margin: 0px;
+  margin-right: -3px;
 }
 
 footer a:hover {
